@@ -1,0 +1,135 @@
+@import './base/veriable'; 
+@import './base/mixin'; 
+
+.main-nav{
+	padding: 0;
+	background: linear-gradient(178deg, #e12503 0%, #85060c 100%);
+	border-bottom:1px solid rgba(0,0,0,.2); 
+	border-top:1px solid rgba(0,0,0,.2); 
+}
+
+.nav-brand{
+	width: 200px;
+	display: flex;
+}
+
+.navbar-brand{
+	font-size: 15px;
+	color: #fff;
+}
+
+.nav-link{
+	font-size: 12px;
+	color: #fff;
+	&:hover{
+		color: #fff;
+		background-color: $l-gray;
+	}
+}
+
+.sidenav-toggler{
+	border: 0;
+    background-color: transparent;
+    padding: 0 20px;
+}
+
+
+// sidebar
+
+.sidenav{
+	width: 200px;
+	background: linear-gradient(178deg, #e12503 0%, #85060c 100%);
+	height: 100%;
+	position: fixed;
+	z-index: 100;
+	display: flex;
+	border-right:1px solid rgba(0,0,0,.2);
+	padding: 40px 5px 5px 5px;  
+}
+
+.agent-img{
+    display: block;
+    width: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+}
+
+.agent-img_container{
+	@include ImgContainer('100%',auto);
+	img{
+		@include fitImg;
+	}
+}
+
+.nav-sidenav{
+	width: 100%;
+	list-style: none;
+	li{
+		&:hover{
+			color: #fff;
+			background-color: $l-gray;
+		}
+	}
+	li a{
+		display: block;
+		padding: 7px 14px;
+		color: #fff;
+		text-decoration: none;
+		font-size: 12px;
+		text-transform: capitalize;
+		width: 100%;
+		width: -webkit-fill-available;
+	}
+}
+
+.toggle-icon{
+	font-size: 7px;
+	color: #fff;
+	padding: 7px 10px;
+	cursor: pointer;
+}
+
+.submenu{
+	background-color: #e12503;
+	display: none;
+}
+
+// media queries
+
+@media(min-width: 992px){
+	.nav-brand{
+		margin-left: -15px;
+		border-right:1px solid rgba(0,0,0,.2); 
+	}
+
+	.navbar-nav{
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	.left-nav,.right-nav{
+		display: flex;
+	}
+}
+
+// dashboard content area
+.main{
+	background-color: $l-gray;
+	padding: 45px 15px 10px 210px;
+	height: 100%;
+}
+
+
+.post-form,.show-data{
+	background-color: #fff;
+	box-shadow: $shadow;
+	padding: 20px 15px;
+	border-radius: 5px;
+}
+
+@media (min-width: 576px){
+	.modal-dialog {
+	    max-width: 650px;
+	}
+}

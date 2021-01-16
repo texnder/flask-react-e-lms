@@ -1,0 +1,45 @@
+@import './base/veriable'; 
+@import './base/mixin'; 
+
+.title h1{
+	background-color: $primary;
+	padding: 20px 40px;
+	text-align: center;
+	color: #fff;
+	text-shadow: 2px 2px 5px rgba(0,0,0,.3)
+}
+
+
+.u-form{
+	max-width: 80%;
+	margin: 20px auto;
+}
+
+.req-form{
+	display: flex;
+	justify-content: center;
+	padding-top: 20px;
+	p{
+		color: $primary;
+	}
+}
+
+.auth-login{
+	max-width: 50%;
+	margin: auto;
+}
+
+
+.agent-img{
+    display: block;
+    width: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+}
+
+@media (min-width: 576px){
+	.modal-dialog {
+	    max-width: 700px;
+	}
+}
