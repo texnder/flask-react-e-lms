@@ -35,7 +35,6 @@ export default class UploadAdminImg extends React.Component {
 			}).then(res=>res.json()).then(data => {
 				this.setState({message: data.message});
 				if('filename' in data){
-					console.log(data);
 					this.props.setImg(data.filename);
 				}
 			},err=>console.log(err));

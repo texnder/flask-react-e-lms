@@ -19,7 +19,7 @@ import os
    from customer portal...
 """
 
-UPLOAD_FOLDER = 'C:\\xampp\\htdocs\\reactjs\\static\\images'
+UPLOAD_FOLDER = './static/images'
 ALLOWED_EXTENSIONS = { 'png', 'jpg', 'jpeg'}
 
 # start flask app
@@ -28,9 +28,14 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)
 # setting upload folder for images 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
 # connect to database using db link:
 # here we are using mysql for this application
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/redCarpet'
+# url should be <system>://<username>:<password>@<host>/<dbname>
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:example@db/redCarpet'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 
 # flask-SQLAlchemy instance to work with database
 db = SQLAlchemy(app)
@@ -446,4 +451,4 @@ def destroy():
       
 
 # start app server in development mode:
-app.run(debug=True)
+app.run(host= "0.0.0.0",port = 5000, debug=True)

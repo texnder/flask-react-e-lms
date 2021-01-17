@@ -14,6 +14,7 @@ class SideNavbar extends React.Component {
     }
 
     _setNewImg = (img) => {
+        this.props.auth.img = img;
         this.setState({dbImgUrl: '/static/images/admin/'+img});
     }
 
