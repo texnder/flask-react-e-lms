@@ -54,6 +54,3 @@ both 'admin' and 'agent' can delete permanently any loan application, not after 
 
 
 ================================== end =====================================
-
-To get vendor components documentation please visit [texnder](http://texnder.com/)
-
